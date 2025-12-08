@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
 
-    <!-- Saira Font -->
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="CSS/normalize.css">
@@ -94,9 +93,12 @@
 
         <h3>Bad End</h3>
         <div class="gallery-grid">
+
             <img src="Images/BadEnd.webp">
             <img src="Images/BadEnd2.webp">
-            <img src="Images/BadEnd3.webp">
+
+            <img src="Images/BadEnd3.webp" id="trigger-bad-end">
+
             <img src="Images/BadEnd4.webp">
             <img src="Images/BadEnd6.webp">
             <img src="Images/BadEnd7.webp">
@@ -145,6 +147,31 @@
     <footer>
         <p>© 2024 COLD FRONT</p>
     </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const badEndImg = document.getElementById("trigger-bad-end");
+
+        if (!badEndImg) {
+            console.error("❌ trigger-bad-end not found on page.");
+            return;
+        }
+
+        console.log("👍 Bad End trigger is ACTIVE.");
+
+        badEndImg.addEventListener("click", function () {
+
+            document.body.classList.add("bad-end-mode");
+
+            const overlay = document.createElement("div");
+            overlay.classList.add("bad-end-overlay");
+            document.body.appendChild(overlay);
+
+            console.log("🔥 BAD END MODE ACTIVATED");
+        });
+    });
+    </script>
 
 </body>
 </html>

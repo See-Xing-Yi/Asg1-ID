@@ -17,6 +17,11 @@ body {
     padding: 10%;
 }
 
+p {
+    line-height: 1.5;  
+    margin-bottom: 1.2rem; 
+}
+
 /* Header */
 .site-logo {
     margin-top: 0;
@@ -252,6 +257,23 @@ nav a:hover {
     }
 }
 
+/* Uh oh */
+.bad-end-mode {
+    background-color: #300;
+    filter: hue-rotate(-60deg) saturate(2);
+}
+
+.bad-end-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(180, 0, 0, 0.35);
+    pointer-events: none;
+    z-index: 99999;
+}
+
 /* === Character Page === */
 .characters-grid {
     display: grid;
@@ -377,7 +399,7 @@ nav a:hover {
 .quote {
     font-size: 1.1rem;
     font-style: italic;
-    padding: 10px 20px;
+    padding: 5px 10px;
     line-height: 1.4;
 }
 
