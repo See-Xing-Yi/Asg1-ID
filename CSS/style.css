@@ -1,97 +1,115 @@
-body{
-    margin: 3%;
+
+/* === Global Reset / Body Styling === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  background-color: #ffffff;         / White base /
+  color: #0a2a45;                    / Deep icy navy text /
+
+  border: 12px solid #a8d8ff;        / Soft ice-blue border /
+  box-sizing: border-box;
+  min-height: 100vh;
 }
 
-h1, h2{
-    text-align: center;
+/* Header */
+header {
+  background: linear-gradient(to bottom, #e7f6ff, #cfeaff);
+  padding: 20px;
+  text-align: center;
+  color: #033b63;
 }
 
-h3{
-    text-align: center;
-    font-weight: 100px;
+header h1 {
+  margin: 0;
+  font-size: 3rem;
 }
 
-#bold{
-    font-size: larger;
-    font-weight: 100px;
+header h3 {
+  margin-top: 5px;
+  font-weight: normal;
 }
 
-/* Header Stuff */
-
-nav{
-    display: flex;
-    justify-content: center; 
-    gap: 20px; 
-    padding: 2%;
+/* Navigation Bar */
+nav {
+  margin-top: 15px;
 }
 
-/* Fix center-ing */
-.characters-grid {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+nav a {
+  text-decoration: none;
+  padding: 10px 18px;
+  color: #033b63;
+  background-color: #ffffff;
+  border: 2px solid #a8d8ff;
+  border-radius: 6px;
+  margin: 0 5px;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+nav a:hover {
+  background-color: #a8d8ff;
+  color: #ffffff;
+}
+
+/*Spoiler Warning*/
+#bold {
+  font-weight: bold;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); / 3 columns /
+  gap: 20px;
+  padding: 30px;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #a8d8ff;
+  object-fit: cover;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 80, 140, 0.2);
+}
+
+/* Character */
 .character-card {
-    margin: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #ffffff;
+  border: 3px solid #a8d8ff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Character Pages */
-/* Main box to hold both boxes side by side */
-.page-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 20px;
+.character-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 80, 140, 0.15);
 }
 
-/* Left box */
-.left-box {
-    flex: 1;
-    background: #dedede;
-    padding: 20px;
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 30px;
 }
 
-/* Profile picture box */
-.profile-area img {
-    width: 250px;
-    height: auto;
-    padding: 5px;
-    background: white;
-}
-
-/* Info text */
-.info-area {
-    font-family: Arial, sans-serif;
-}
-
-.info-area h2 {
-    margin-top: 0;
-}
-
-/* Right box – quote */
-.right-box {
-    flex: 1;
-    padding: 20px;  
-    display: flex;             
-    justify-content: center;  
-    align-items: center;    
-    text-align: center;           
-    font-style: italic;       
-}
-
-.right-box h2 {
-    margin-top: 0;
-}
-
-.quote {
-    text-align: center;
-    font-size: larger;
+/ === Footer (If you have one) === */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #033b63;
+  background-color: #e7f6ff;
 }
