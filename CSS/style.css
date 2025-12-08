@@ -1,0 +1,25 @@
+body{
+    margin: 3%;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+
+#bold{
+    font-size: larger;
+    font-weight: 100px;
+}
+
+nav{
+    text-align: center;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+/* Fix center-ing */
+img{
+    margin-left: 3%; 
+}
+
+/* Gallery */

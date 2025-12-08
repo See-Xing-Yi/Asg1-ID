@@ -3,6 +3,8 @@
 Cold Front
 
 
+
+
 References and Sources:
 https://coldfront.fandom.com/wiki/Cold_Front_Wiki
 https://coldfront.fandom.com/wiki/Winnie_Bosko
