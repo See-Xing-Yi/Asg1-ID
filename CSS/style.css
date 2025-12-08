@@ -1,16 +1,19 @@
-
-/* === Global Reset / Body Styling === */
+/* ===== General Mobile Adjustments ===== */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 
-  background-color: #ffffff;         / White base /
-  color: #0a2a45;                    / Deep icy navy text /
+  background-color: #ffffff;     
+  color: #0a2a45;                  
 
-  border: 12px solid #a8d8ff;        / Soft ice-blue border /
-  box-sizing: border-box;
-  min-height: 100vh;
+    border-width: 0 200px;
+    border-style: solid;
+    border-color: #a8d8ff;
+
+  background: linear-gradient(to bottom, #e7f6ff, #cfeaff);
+    margin: 0;
+    padding: 10%;
 }
 
 /* Header */
@@ -31,7 +34,7 @@ header h3 {
   font-weight: normal;
 }
 
-/* Navigation Bar */
+/* Navigation */
 nav {
   margin-top: 15px;
 }
@@ -53,63 +56,137 @@ nav a:hover {
   color: #ffffff;
 }
 
-/*Spoiler Warning*/
+/* Spoiler */
 #bold {
   font-weight: bold;
 }
 
-/* Gallery Grid */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); / 3 columns /
-  gap: 20px;
-  padding: 30px;
-  margin: auto;
-  max-width: 1200px;
+/* Character Grid Adjustments */
+@media (max-width: 750px) {
+  .characters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 3px solid #a8d8ff;
-  object-fit: cover;
+/* Switch gallery to single-column on small phones */
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  .characters-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 80, 140, 0.2);
+/*Character Page (Left & Right Section)*/
+
+/* Stack the two main boxes when screen is narrow */
+.page-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
 }
 
-/* Character */
-.character-card {
-  background-color: #ffffff;
-  border: 3px solid #a8d8ff;
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
+/* LEFT BOX — image + name + info side by side */
+.left-box {
+    flex: 1;
+    background: #dedede;
+    padding: 20px;
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
 }
 
-.character-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0, 80, 140, 0.15);
+/* Profile picture + name UNDER it */
+.profile-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.characters-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  padding: 30px;
+.profile-area img {
+    width: 250px;
+    height: auto;
+    padding: 5px;
+    background: white;
+    border-radius: 4px;
 }
 
-/ === Footer (If you have one) === */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #033b63;
-  background-color: #e7f6ff;
+.profile-area h2 {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Info area beside the picture */
+.info-area h2 {
+    margin: 0 0 15px 0;
+}
+
+.info-area p {
+    margin: 6px 0;
+}
+
+/* RIGHT BOX (quote box) */
+.right-box {
+    flex: 1;
+    background: #dedede;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    padding: 10px 20px;
+    line-height: 1.4;
+}
+
+/* === Responsive Mobile Layout === */
+@media (max-width: 900px) {
+
+    .page-container {
+        flex-direction: column;
+    }
+
+    .left-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-area {
+        margin-top: 20px;
+    }
+
+    .right-box {
+        margin-top: 20px;
+    }
+}
+/* Tiny screen tweaks */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .quote {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .profile-area img {
+    width: 90%;
+  }
 }
