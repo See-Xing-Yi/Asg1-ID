@@ -147,40 +147,5 @@
     <footer>
         <p>© 2024 COLD FRONT</p>
     </footer>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const badEndImg = document.getElementById("trigger-bad-end");
-
-        if (localStorage.getItem("badEndActivated") === "true") {
-            activateBadEndMode();
-        }
-
-        if (badEndImg) {
-            badEndImg.classList.add("pulsing");
-
-            badEndImg.addEventListener("click", function () {
-
-                console.log("🔥 BAD END ACTIVATED");
-
-                localStorage.setItem("badEndActivated", "true");
-
-                activateBadEndMode();
-            });
-        }
-
-        function activateBadEndMode() {
-
-            document.body.classList.add("bad-end-mode");
-
-            if (!document.querySelector(".bad-end-overlay")) {
-                const overlay = document.createElement("div");
-                overlay.classList.add("bad-end-overlay");
-                document.body.appendChild(overlay);
-            }
-        }
-    });
-    </script>
 </body>
 </html>
