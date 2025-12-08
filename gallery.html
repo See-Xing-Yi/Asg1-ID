@@ -153,23 +153,33 @@
 
         const badEndImg = document.getElementById("trigger-bad-end");
 
-        if (!badEndImg) {
-            console.error("❌ trigger-bad-end not found on page.");
-            return;
+        if (localStorage.getItem("badEndActivated") === "true") {
+            activateBadEndMode();
         }
 
-        console.log("👍 Bad End trigger is ACTIVE.");
+        if (badEndImg) {
+            badEndImg.classList.add("pulsing");
 
-        badEndImg.addEventListener("click", function () {
+            badEndImg.addEventListener("click", function () {
+
+                console.log("🔥 BAD END ACTIVATED");
+
+                localStorage.setItem("badEndActivated", "true");
+
+                activateBadEndMode();
+            });
+        }
+
+        function activateBadEndMode() {
 
             document.body.classList.add("bad-end-mode");
 
-            const overlay = document.createElement("div");
-            overlay.classList.add("bad-end-overlay");
-            document.body.appendChild(overlay);
-
-            console.log("🔥 BAD END MODE ACTIVATED");
-        });
+            if (!document.querySelector(".bad-end-overlay")) {
+                const overlay = document.createElement("div");
+                overlay.classList.add("bad-end-overlay");
+                document.body.appendChild(overlay);
+            }
+        }
     });
     </script>
 

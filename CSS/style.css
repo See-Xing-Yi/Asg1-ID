@@ -259,8 +259,8 @@ nav a:hover {
 
 /* Uh oh */
 .bad-end-mode {
-    background-color: #300;
-    filter: hue-rotate(-60deg) saturate(2);
+    background-color: #2a0000 !important;
+    filter: hue-rotate(-90deg) saturate(8) brightness(0.6) contrast(1.6);
 }
 
 .bad-end-overlay {
@@ -269,9 +269,27 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(180, 0, 0, 0.35);
+    background: rgba(255, 0, 0, 0.45);
+    mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 99999;
+    animation: fogPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes fogPulse {
+    0%   { opacity: 0.35; }
+    50%  { opacity: 0.55; }
+    100% { opacity: 0.35; }
+}
+
+#trigger-bad-end {
+    cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+#trigger-bad-end:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px red) brightness(1.3);
 }
 
 /* === Character Page === */

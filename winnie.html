@@ -143,5 +143,28 @@
         </p>
       </section>
     </main>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      if (localStorage.getItem("badEndActivated") === "true") {
+          activateBadEndMode();
+      }
+
+      function activateBadEndMode() {
+
+          // Add deep red horror filter
+          document.body.classList.add("bad-end-mode");
+
+          // Add fog overlay only once
+          if (!document.querySelector(".bad-end-overlay")) {
+              const overlay = document.createElement("div");
+              overlay.classList.add("bad-end-overlay");
+              document.body.appendChild(overlay);
+          }
+      }
+    });
+    </script>
+
   </body>
 </html>
