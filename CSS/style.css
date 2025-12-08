@@ -1,3 +1,4 @@
+
 /* ===== General Mobile Adjustments ===== */
 body {
   margin: 0;
@@ -22,6 +23,12 @@ header {
   padding: 20px;
   text-align: center;
   color: #033b63;
+}
+
+.title-link {
+    font-family: 'Saira', sans-serif;
+    text-decoration: none;
+    color: inherit;
 }
 
 header h1 {
@@ -57,8 +64,38 @@ nav a:hover {
 }
 
 /* Spoiler */
-#bold {
-  font-weight: bold;
+/* Spoiler Warning Box */
+.spoiler-warning {
+    max-width: 900px;
+    margin: 20px auto; /* centers under header */
+    padding: 20px 25px;
+
+    background: #faf7f3; /* soft cream like your reference */
+    border: 3px solid #96b6d4;
+    border-radius: 12px;
+
+    color: #4a6c8b;
+    font-family: 'Saira', sans-serif;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Title inside the warning */
+.warning-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+}
+
+/* Text inside the warning */
+.warning-text {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.warning-text strong {
+    text-decoration: underline;
 }
 
 /* Character Grid Adjustments */
