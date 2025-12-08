@@ -2,8 +2,13 @@ body{
     margin: 3%;
 }
 
-h1, h2, h3{
+h1, h2{
     text-align: center;
+}
+
+h3{
+    text-align: center;
+    font-weight: 100px;
 }
 
 #bold{
@@ -11,15 +16,82 @@ h1, h2, h3{
     font-weight: 100px;
 }
 
+/* Header Stuff */
+
 nav{
-    text-align: center;
-    justify-content: space-between;
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
     padding: 2%;
 }
 
 /* Fix center-ing */
-img{
-    margin-left: 3%; 
+.characters-grid {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
 }
 
-/* Gallery */
+.character-card {
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Character Pages */
+/* Main box to hold both boxes side by side */
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Left box */
+.left-box {
+    flex: 1;
+    background: #dedede;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Profile picture box */
+.profile-area img {
+    width: 250px;
+    height: auto;
+    padding: 5px;
+    background: white;
+}
+
+/* Info text */
+.info-area {
+    font-family: Arial, sans-serif;
+}
+
+.info-area h2 {
+    margin-top: 0;
+}
+
+/* Right box – quote */
+.right-box {
+    flex: 1;
+    padding: 20px;  
+    display: flex;             
+    justify-content: center;  
+    align-items: center;    
+    text-align: center;           
+    font-style: italic;       
+}
+
+.right-box h2 {
+    margin-top: 0;
+}
+
+.quote {
+    text-align: center;
+    font-size: larger;
+}
